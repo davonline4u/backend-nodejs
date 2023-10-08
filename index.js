@@ -8,7 +8,7 @@ import connectDB from "./config/db.js"
 dotenv.config()
 connectDB()
 const app = express();
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 
 app.use(cors()) 
@@ -32,4 +32,4 @@ app.get("/user", (req, res)=> {
     })
 })
 
-app.listen(PORT, () => console.log("server started"))
+app.listen(PORT, () => console.log("server started at port 3000"))
